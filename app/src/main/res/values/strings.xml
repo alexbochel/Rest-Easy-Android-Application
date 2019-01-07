@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Rest Easy</string>
+    <string name="title_activity_alarm_screen">AlarmScreen</string>
 </resources>
