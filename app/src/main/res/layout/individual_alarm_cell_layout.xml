@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/alarmTimeDisplay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/alarmTime"
+        android:textSize="18pt"/>
+
+    <Switch
+        android:id="@+id/alarmArmedSwitch"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_toRightOf="@id/alarmTimeDisplay"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"/>
+
+    <LinearLayout
+        android:id="@+id/armedDaysOfTheWeek"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/alarmTimeDisplay"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginHorizontal="5dp"
+            android:text="@string/sundayAbbreviation" />
+
+        <Button
+            android:layout_width="40px"
+            android:layout_height="40px"
+            android:layout_marginHorizontal="5dp"
+            android:text="@string/mondayAbbreviation" />
+
+        <Button
+            android:layout_width="40px"
+            android:layout_height="40px"
+            android:layout_marginHorizontal="5dp"
+            android:text="@string/tuesdayAbbreviation" />
+
+        <Button
+            android:layout_width="40px"
+            android:layout_height="40px"
+            android:layout_marginHorizontal="5dp"
+            android:text="@string/wednesdayAbbreviation" />
+
+        <Button
+            android:layout_width="40px"
+            android:layout_height="40px"
+            android:layout_marginHorizontal="5dp"
+            android:text="@string/thursdayAbbreviation" />
+
+        <Button
+            android:layout_width="40px"
+            android:layout_height="40px"
+            android:layout_marginHorizontal="5dp"
+            android:text="@string/fridayAbbreviation" />
+
+        <Button
+            android:layout_width="40px"
+            android:layout_height="40px"
+            android:layout_marginHorizontal="5dp"
+            android:text="@string/saturdayAbbreviation" />
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>

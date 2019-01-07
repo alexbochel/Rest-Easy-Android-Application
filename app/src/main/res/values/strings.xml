@@ -1,4 +1,12 @@
 <resources>
     <string name="app_name">Rest Easy</string>
     <string name="title_activity_alarm_screen">AlarmScreen</string>
+    <string name="alarmTime">12:00</string>
+    <string name="sundayAbbreviation">Su</string>
+    <string name="mondayAbbreviation">Mo</string>
+    <string name="tuesdayAbbreviation">Tu</string>
+    <string name="wednesdayAbbreviation">We</string>
+    <string name="thursdayAbbreviation">Th</string>
+    <string name="fridayAbbreviation">Fr</string>
+    <string name="saturdayAbbreviation">Sa</string>
 </resources>
