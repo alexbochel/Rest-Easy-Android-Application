@@ -2,22 +2,33 @@ package com.restez.alexbochel.resteasy;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.text.Layout;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.Switch;
 import android.widget.TextView;
+import java.util.ArrayList;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
 
     private final static String tag = "RecyclerViewAdapter";
 
-    // Instantiate the array list of alarm models here.
+    private ArrayList<AlarmModel> alarmModelArrayList;
+
+    public RecyclerViewAdapter(ArrayList<AlarmModel> alarmModelArrayList)
+    {
+        this.alarmModelArrayList = alarmModelArrayList;
+    }
+
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.
+                individual_alarm_cell_layout, viewGroup, false);
         return null;
     }
 
