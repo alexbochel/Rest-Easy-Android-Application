@@ -2,7 +2,6 @@ package com.restez.alexbochel.resteasy;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
-import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,23 +22,33 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         this.alarmModelArrayList = alarmModelArrayList;
     }
 
-
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.
                 individual_alarm_cell_layout, viewGroup, false);
-        return null;
+        ViewHolder holder = new ViewHolder(view);
+
+        return holder;
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
+        viewHolder.alarmArmedSwitch.setChecked(alarmModelArrayList.get(i).isAlarmArmedOn());
+        viewHolder.alarmTimeView.setText(alarmModelArrayList.get(i).getAlarmTime().toString()); // TODO: Format Date
 
+        viewHolder.sundayButton.setPressed(alarmModelArrayList.get(i).getDaysAlarmIsArmed()[DaysOfTheWeekToIntegers.Sunday]);
+        viewHolder.mondayButton.setPressed(alarmModelArrayList.get(i).getDaysAlarmIsArmed()[DaysOfTheWeekToIntegers.Monday]);
+        viewHolder.tuesdayButton.setPressed(alarmModelArrayList.get(i).getDaysAlarmIsArmed()[DaysOfTheWeekToIntegers.Tuesday]);
+        viewHolder.wednesdayButton.setPressed(alarmModelArrayList.get(i).getDaysAlarmIsArmed()[DaysOfTheWeekToIntegers.Wednesday]);
+        viewHolder.thursdayButton.setPressed(alarmModelArrayList.get(i).getDaysAlarmIsArmed()[DaysOfTheWeekToIntegers.Thursday]);
+        viewHolder.fridayButton.setPressed(alarmModelArrayList.get(i).getDaysAlarmIsArmed()[DaysOfTheWeekToIntegers.Friday]);
+        viewHolder.saturdayButton.setPressed(alarmModelArrayList.get(i).getDaysAlarmIsArmed()[DaysOfTheWeekToIntegers.Saturday]);
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return alarmModelArrayList.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
@@ -47,6 +56,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         RelativeLayout parentLayout;
         TextView alarmTimeView;
         Switch alarmArmedSwitch;
+
         Button sundayButton;
         Button mondayButton;
         Button tuesdayButton;
@@ -62,6 +72,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             parentLayout = itemView.findViewById(R.id.parent_recycler_layout);
             alarmTimeView = itemView.findViewById(R.id.alarm_time_display);
             alarmArmedSwitch = itemView.findViewById(R.id.alarm_armed_switch);
+
             sundayButton = itemView.findViewById(R.id.sunday_button);
             mondayButton = itemView.findViewById(R.id.monday_button);
             tuesdayButton = itemView.findViewById(R.id.tuesday_button);
@@ -70,6 +81,5 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             fridayButton = itemView.findViewById(R.id.friday_button);
             saturdayButton = itemView.findViewById(R.id.saturday_button);
         }
-
     }
 }

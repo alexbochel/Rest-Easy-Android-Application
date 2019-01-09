@@ -4,10 +4,13 @@ import java.util.Date;
 
 public class AlarmModel {
 
+    private static final int numberOfDaysPerWeek = 7;
+
     private Date AlarmTime;
     private String AlarmIntensity;
     private String AlarmVibrationPattern;
     private boolean AlarmArmedOn;
+    private boolean[] DaysAlarmIsArmed = new boolean[numberOfDaysPerWeek];
 
     public AlarmModel(Date alarmTime, String alarmIntensity, String alarmVibrationPattern,
                       boolean alarmArmedOn)
@@ -17,6 +20,10 @@ public class AlarmModel {
         AlarmVibrationPattern = alarmVibrationPattern;
         AlarmArmedOn = alarmArmedOn;
 
+        for (int i = 0; i < numberOfDaysPerWeek; i++)
+        {
+            DaysAlarmIsArmed[i] = true;
+        }
     }
 
     public Date getAlarmTime() {
@@ -33,5 +40,9 @@ public class AlarmModel {
 
     public boolean isAlarmArmedOn() {
         return AlarmArmedOn;
+    }
+
+    public boolean[] getDaysAlarmIsArmed() {
+        return DaysAlarmIsArmed;
     }
 }
