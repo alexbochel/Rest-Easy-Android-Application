@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="wrap_content">
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:padding="15dp">
 
     <TextView
         android:id="@+id/alarmTimeDisplay"
@@ -24,51 +25,74 @@
         android:layout_below="@id/alarmTimeDisplay"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
-        android:gravity="center"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="0dp"
+        android:gravity="left"
         android:orientation="horizontal">
 
         <Button
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_marginHorizontal="5dp"
-            android:text="@string/sundayAbbreviation" />
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="7dp"
+            android:background="#0000"
+            android:text="@string/sundayAbbreviation"
+            android:textSize="5pt" />
 
         <Button
-            android:layout_width="40px"
-            android:layout_height="40px"
-            android:layout_marginHorizontal="5dp"
-            android:text="@string/mondayAbbreviation" />
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="7dp"
+            android:background="#0000"
+            android:text="@string/mondayAbbreviation"
+            android:textSize="5pt" />
 
         <Button
-            android:layout_width="40px"
-            android:layout_height="40px"
-            android:layout_marginHorizontal="5dp"
-            android:text="@string/tuesdayAbbreviation" />
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="7dp"
+            android:background="#0000"
+            android:text="@string/tuesdayAbbreviation"
+            android:textSize="5pt" />
 
         <Button
-            android:layout_width="40px"
-            android:layout_height="40px"
-            android:layout_marginHorizontal="5dp"
-            android:text="@string/wednesdayAbbreviation" />
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="7dp"
+            android:background="#0000"
+            android:text="@string/wednesdayAbbreviation"
+            android:textSize="5pt" />
 
         <Button
-            android:layout_width="40px"
-            android:layout_height="40px"
-            android:layout_marginHorizontal="5dp"
-            android:text="@string/thursdayAbbreviation" />
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="7dp"
+            android:background="#0000"
+            android:text="@string/thursdayAbbreviation"
+            android:textSize="5pt" />
 
         <Button
-            android:layout_width="40px"
-            android:layout_height="40px"
-            android:layout_marginHorizontal="5dp"
-            android:text="@string/fridayAbbreviation" />
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="7dp"
+            android:background="#0000"
+            android:text="@string/fridayAbbreviation"
+            android:textSize="5pt" />
 
         <Button
-            android:layout_width="40px"
-            android:layout_height="40px"
-            android:layout_marginHorizontal="5dp"
-            android:text="@string/saturdayAbbreviation" />
-
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="7dp"
+            android:background="#0000"
+            android:text="@string/saturdayAbbreviation"
+            android:textSize="5pt" />
 
     </LinearLayout>
 
