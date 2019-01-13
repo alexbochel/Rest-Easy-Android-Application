@@ -8,6 +8,19 @@
     tools:context=".AlarmScreen"
     tools:showIn="@layout/activity_alarm_screen">
 
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="57dp"
+        android:layout_height="56dp"
+        android:clickable="true"
+        app:layout_constraintBottom_toTopOf="@+id/alarms_recycler_view"
+        app:layout_constraintEnd_toStartOf="@+id/alarms_recycler_view"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/alarms_recycler_view"
+        app:layout_constraintTop_toBottomOf="@+id/alarms_recycler_view"
+        app:layout_constraintVertical_bias="0.13"
+        app:srcCompat="@android:drawable/ic_menu_add" />
+
     <TextView
         android:id="@+id/alarmLabel"
         android:layout_width="wrap_content"
@@ -23,6 +36,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <android.support.v7.widget.RecyclerView
+        android:id="@+id/alarms_recycler_view"
         android:layout_width="368dp"
         android:layout_height="460dp"
         android:layout_marginStart="7dp"

@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.Switch;
 import android.widget.TextView;
+
+import java.text.DateFormat;
 import java.util.ArrayList;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
@@ -35,7 +37,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
         viewHolder.alarmArmedSwitch.setChecked(alarmModelArrayList.get(i).isAlarmArmedOn());
-        viewHolder.alarmTimeView.setText(alarmModelArrayList.get(i).getAlarmTime().toString()); // TODO: Format Date
+        viewHolder.alarmTimeView.setText(DateFormat.getTimeInstance(DateFormat.SHORT)
+                .format(alarmModelArrayList.get(i).getAlarmTime()));
 
         viewHolder.sundayButton.setPressed(alarmModelArrayList.get(i).getDaysAlarmIsArmed()[DaysOfTheWeekToIntegers.Sunday]);
         viewHolder.mondayButton.setPressed(alarmModelArrayList.get(i).getDaysAlarmIsArmed()[DaysOfTheWeekToIntegers.Monday]);
