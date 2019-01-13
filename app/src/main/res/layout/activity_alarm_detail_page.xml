@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.widget.RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AlarmDetailPageActivity">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/top_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="20pt"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="< Back"
+            android:background="#0000"
+            android:layout_alignParentLeft="true"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Alarms"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"/>
+        
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Done"
+            android:background="#0000"
+            android:layout_alignParentRight="true"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/time_picker_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/top_toolbar">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Time"/>
+
+        <TimePicker
+            android:layout_width="match_parent"
+            android:layout_height="90pt"
+            android:timePickerMode="spinner"></TimePicker>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/time_picker_layout">
+
+        <TextView
+            android:id="@+id/type_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Type"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/type_text_view">
+
+        <NumberPicker
+            android:id="@+id/alarm_style_picker"
+            android:layout_width="wrap_content"
+            android:layout_height="90pt"
+            android:timePickerMode="spinner"
+            android:layout_gravity="left"></NumberPicker>
+
+        <NumberPicker
+            android:id="@+id/alarm_intensity_picker"
+            android:layout_width="wrap_content"
+            android:layout_height="90pt"
+            android:timePickerMode="spinner"
+            android:layout_gravity="right"></NumberPicker>
+
+    </LinearLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>
+
+</android.widget.RelativeLayout>
