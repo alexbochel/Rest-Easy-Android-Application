@@ -9,4 +9,5 @@
     <string name="thursdayAbbreviation">Th</string>
     <string name="fridayAbbreviation">Fr</string>
     <string name="saturdayAbbreviation">Sa</string>
+    <string name="backButtonText"><![CDATA[< Back]]></string>
 </resources>
