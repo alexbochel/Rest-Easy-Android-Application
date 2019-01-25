@@ -58,7 +58,8 @@
         <TimePicker
             android:layout_width="match_parent"
             android:layout_height="90pt"
-            android:timePickerMode="spinner"></TimePicker>
+            android:timePickerMode="spinner"
+            android:descendantFocusability="blocksDescendants"></TimePicker>
 
     </RelativeLayout>
 
@@ -89,13 +90,17 @@
                     android:id="@+id/alarm_style_picker"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:timePickerMode="spinner"></NumberPicker>
+                    android:timePickerMode="spinner"
+                    android:descendantFocusability="blocksDescendants"
+                    ></NumberPicker>
 
                 <NumberPicker
                     android:id="@+id/alarm_intensity_picker"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:timePickerMode="spinner"></NumberPicker>
+                    android:timePickerMode="spinner"
+                    android:descendantFocusability="blocksDescendants"
+                    ></NumberPicker>
             </TableRow>
         </TableLayout>
     </RelativeLayout>
