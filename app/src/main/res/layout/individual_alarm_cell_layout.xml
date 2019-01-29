@@ -2,8 +2,9 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="wrap_content"
     android:padding="15dp"
-    android:id="@+id/parent_recycler_layout">
-
+    android:id="@+id/parent_recycler_layout"
+    android:layout_margin="10dp"
+    >
     <TextView
         android:id="@+id/alarm_time_display"
         android:layout_width="wrap_content"

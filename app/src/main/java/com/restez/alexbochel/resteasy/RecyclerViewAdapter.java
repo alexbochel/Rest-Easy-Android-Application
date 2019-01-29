@@ -15,8 +15,6 @@ import java.util.ArrayList;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
 
-    private final static String tag = "RecyclerViewAdapter";
-
     private ArrayList<AlarmModel> alarmModelArrayList;
 
     public RecyclerViewAdapter(ArrayList<AlarmModel> alarmModelArrayList)
