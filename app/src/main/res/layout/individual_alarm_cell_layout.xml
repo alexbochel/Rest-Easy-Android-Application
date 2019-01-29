@@ -4,6 +4,7 @@
     android:padding="15dp"
     android:id="@+id/parent_recycler_layout"
     android:layout_margin="10dp"
+    android:background="@drawable/alarm_cell_rounded_edges"
     >
     <TextView
         android:id="@+id/alarm_time_display"
