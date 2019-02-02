@@ -48,6 +48,7 @@ public class AlarmScreen extends AppCompatActivity {
                     true);
             currentAlarmModelList.add(dummyAlarm);
         }
+
         RecyclerView scrollableAlarmsView = findViewById(R.id.alarms_recycler_view);
         RecyclerViewAdapter scrollableAlarmsViewAdapter = new RecyclerViewAdapter(currentAlarmModelList);
         scrollableAlarmsView.setAdapter(scrollableAlarmsViewAdapter);
