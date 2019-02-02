@@ -35,8 +35,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
         viewHolder.alarmArmedSwitch.setChecked(alarmModelArrayList.get(i).isAlarmArmedOn());
-        viewHolder.alarmTimeView.setText(DateFormat.getTimeInstance(DateFormat.SHORT)
-                .format(alarmModelArrayList.get(i).getAlarmTime()));
+        viewHolder.alarmTimeView.setText(alarmModelArrayList.get(i).getAlarmTime());
 
         viewHolder.sundayButton.setPressed(alarmModelArrayList.get(i).getDaysAlarmIsArmed()[DaysOfTheWeekToIntegers.Sunday]);
         viewHolder.mondayButton.setPressed(alarmModelArrayList.get(i).getDaysAlarmIsArmed()[DaysOfTheWeekToIntegers.Monday]);

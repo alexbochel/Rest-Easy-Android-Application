@@ -6,13 +6,13 @@ public class AlarmModel {
 
     private static final int numberOfDaysPerWeek = 7;
 
-    private Date AlarmTime;
+    private String AlarmTime;
     private String AlarmIntensity;
     private String AlarmVibrationPattern;
     private boolean AlarmArmedOn;
     private boolean[] DaysAlarmIsArmed = new boolean[numberOfDaysPerWeek];
 
-    public AlarmModel(Date alarmTime, String alarmIntensity, String alarmVibrationPattern,
+    public AlarmModel(String alarmTime, String alarmIntensity, String alarmVibrationPattern,
                       boolean alarmArmedOn)
     {
         AlarmTime = alarmTime;
@@ -26,7 +26,7 @@ public class AlarmModel {
         }
     }
 
-    public Date getAlarmTime() {
+    public String getAlarmTime() {
         return AlarmTime;
     }
 

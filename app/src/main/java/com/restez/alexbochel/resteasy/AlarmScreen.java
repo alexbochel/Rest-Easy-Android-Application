@@ -18,7 +18,7 @@ import java.util.Date;
 public class AlarmScreen extends AppCompatActivity {
 
     private FloatingActionButton newAlarmButton;
-    public ArrayList<AlarmModel> currentAlarmModelList = new ArrayList<>();
+    public ArrayList<AlarmModel> currentAlarmModelList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +26,8 @@ public class AlarmScreen extends AppCompatActivity {
         setContentView(R.layout.activity_alarm_screen);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        currentAlarmModelList = new ArrayList<>();
 
         newAlarmButton = findViewById(R.id.floatingActionButton);
 
@@ -36,19 +38,39 @@ public class AlarmScreen extends AppCompatActivity {
             }
         });
 
+        checkForAdditionalAlarm();
         initRecyclerView();
     }
 
-    private void initRecyclerView() {
+    private void checkForAdditionalAlarm() {
+        String isAM = "AM";
+        Intent intentFromNewAlarmPage = getIntent();
 
-        for (int i = 0; i < 5; i++) {
-            Date dummyDate = new Date();
+        int alarmHour = intentFromNewAlarmPage.getIntExtra("hourValue", 12);
+        int alarmMinute = intentFromNewAlarmPage.getIntExtra("minuteValue", 00);
+        String alarmStyle = intentFromNewAlarmPage.getStringExtra("styleValue");
+        String alarmIntensity = intentFromNewAlarmPage.getStringExtra("intensityValue");
 
-            AlarmModel dummyAlarm = new AlarmModel(dummyDate, "Dummy", "Dummy",
-                    true);
-            currentAlarmModelList.add(dummyAlarm);
+        if (alarmHour == 12) {
+            isAM = "PM";
+        }
+        else if (alarmHour == 0) {
+            alarmHour = 12;
+            isAM = "AM";
+        }
+        else if (alarmHour > 12) {
+            alarmHour = alarmHour - 12;
+            isAM = "PM";
         }
 
+        String alarmTime = alarmHour + ":" + String.format("%02d", alarmMinute)
+                + " " + isAM;
+
+        AlarmModel newAlarm = new AlarmModel(alarmTime, alarmIntensity, alarmStyle, true);
+        currentAlarmModelList.add(newAlarm);
+    }
+
+    private void initRecyclerView() {
         RecyclerView scrollableAlarmsView = findViewById(R.id.alarms_recycler_view);
         RecyclerViewAdapter scrollableAlarmsViewAdapter = new RecyclerViewAdapter(currentAlarmModelList);
         scrollableAlarmsView.setAdapter(scrollableAlarmsViewAdapter);
