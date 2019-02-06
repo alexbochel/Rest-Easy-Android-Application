@@ -12,14 +12,16 @@
         <activity
             android:name=".AlarmScreen"
             android:label="@string/title_activity_alarm_screen"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AlarmDetailPageActivity"></activity>
+        <activity android:name=".AlarmDetailPageActivity"
+            android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>
