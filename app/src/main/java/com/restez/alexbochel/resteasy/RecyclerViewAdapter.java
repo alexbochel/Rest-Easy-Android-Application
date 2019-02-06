@@ -51,6 +51,10 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         return alarmModelArrayList.size();
     }
 
+    public void delete(int position) {
+        alarmModelArrayList.remove(position);
+    }
+
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         RelativeLayout parentLayout;

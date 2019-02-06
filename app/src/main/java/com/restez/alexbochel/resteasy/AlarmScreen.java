@@ -6,15 +6,12 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
-import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.View;
-
-import java.lang.reflect.Array;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import com.google.gson.Gson;
@@ -78,12 +75,12 @@ public class AlarmScreen extends AppCompatActivity {
     }
 
     private void initRecyclerView() {
-        RecyclerView scrollableAlarmsView = findViewById(R.id.alarms_recycler_view);
-        RecyclerViewAdapter scrollableAlarmsViewAdapter = new RecyclerViewAdapter(currentAlarmModelList);
+        final RecyclerView scrollableAlarmsView = findViewById(R.id.alarms_recycler_view);
+        final RecyclerViewAdapter scrollableAlarmsViewAdapter = new RecyclerViewAdapter(currentAlarmModelList);
         scrollableAlarmsView.setAdapter(scrollableAlarmsViewAdapter);
         scrollableAlarmsView.setLayoutManager(new LinearLayoutManager(this));
 
-        new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
+        new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT) {
 
             @Override
             public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder viewHolder1) {
@@ -92,7 +89,10 @@ public class AlarmScreen extends AppCompatActivity {
 
             @Override
             public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int i) {
-                removeItem(i);
+                int position = viewHolder.getAdapterPosition();
+                scrollableAlarmsViewAdapter.delete(position);
+                scrollableAlarmsViewAdapter.notifyItemRemoved(position);
+                saveAlarmData();
             }
         }).attachToRecyclerView(scrollableAlarmsView);
     }
@@ -102,14 +102,14 @@ public class AlarmScreen extends AppCompatActivity {
         SharedPreferences.Editor editor = sharedPreferences.edit();
         Gson gson = new Gson();
         String json = gson.toJson(currentAlarmModelList);
-        editor.putString("alarmsList", json);
+        editor.putString("savedAlarmsList", json);
         editor.apply();
     }
 
     private void loadAlarmData() {
         SharedPreferences sharedPreferences =  getSharedPreferences("shared preferences", MODE_PRIVATE);
         Gson gson = new Gson();
-        String json = sharedPreferences.getString("alarmsList", null);
+        String json = sharedPreferences.getString("savedAlarmsList", null);
         Type type = new TypeToken<ArrayList<AlarmModel>>() {}.getType();
         currentAlarmModelList = gson.fromJson(json, type);
 
@@ -118,13 +118,8 @@ public class AlarmScreen extends AppCompatActivity {
         }
     }
 
-    private void removeItem(int itemIndexToRemove) {
-        //currentAlarmModelList.remove();
-    }
-
     private void openNewAlarmDetailPageActivity() {
         Intent intent = new Intent(this, AlarmDetailPageActivity.class);
         startActivity(intent);
     }
-
 }
