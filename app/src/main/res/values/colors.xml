@@ -5,4 +5,5 @@
     <color name="colorAccent">#D81B60</color>
     <color name="colorAlarmCell">#ffffff</color>
     <color name="colorAlarmPageBackground">#00bfff</color>
+    <color name="colorDayOfTheWeekButton">#0080ff</color>
 </resources>

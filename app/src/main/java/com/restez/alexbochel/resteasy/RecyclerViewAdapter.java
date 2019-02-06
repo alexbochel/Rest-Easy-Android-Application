@@ -37,6 +37,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         viewHolder.alarmArmedSwitch.setChecked(alarmModelArrayList.get(i).isAlarmArmedOn());
         viewHolder.alarmTimeView.setText(alarmModelArrayList.get(i).getAlarmTime());
 
+        /*
         viewHolder.sundayButton.setPressed(alarmModelArrayList.get(i).getDaysAlarmIsArmed()[DaysOfTheWeekToIntegers.Sunday]);
         viewHolder.mondayButton.setPressed(alarmModelArrayList.get(i).getDaysAlarmIsArmed()[DaysOfTheWeekToIntegers.Monday]);
         viewHolder.tuesdayButton.setPressed(alarmModelArrayList.get(i).getDaysAlarmIsArmed()[DaysOfTheWeekToIntegers.Tuesday]);
@@ -44,6 +45,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         viewHolder.thursdayButton.setPressed(alarmModelArrayList.get(i).getDaysAlarmIsArmed()[DaysOfTheWeekToIntegers.Thursday]);
         viewHolder.fridayButton.setPressed(alarmModelArrayList.get(i).getDaysAlarmIsArmed()[DaysOfTheWeekToIntegers.Friday]);
         viewHolder.saturdayButton.setPressed(alarmModelArrayList.get(i).getDaysAlarmIsArmed()[DaysOfTheWeekToIntegers.Saturday]);
+        */
     }
 
     @Override
@@ -84,6 +86,10 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             thursdayButton = itemView.findViewById(R.id.thursday_button);
             fridayButton = itemView.findViewById(R.id.friday_button);
             saturdayButton = itemView.findViewById(R.id.saturday_button);
+        }
+
+        public void onClickDayOfTheWeek(View view) {
+
         }
     }
 }

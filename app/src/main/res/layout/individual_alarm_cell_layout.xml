@@ -42,7 +42,8 @@
             android:background="#0000"
             android:text="@string/sundayAbbreviation"
             android:textSize="5pt"
-            android:id="@+id/sunday_button"/>
+            android:id="@+id/sunday_button"
+            android:onClick="onClickDayOfTheWeek"/>
 
         <Button
             android:layout_width="25dp"
@@ -52,7 +53,8 @@
             android:background="#0000"
             android:text="@string/mondayAbbreviation"
             android:textSize="5pt"
-            android:id="@+id/monday_button"/>
+            android:id="@+id/monday_button"
+            android:onClick="onClickDayOfTheWeek"/>
 
         <Button
             android:layout_width="25dp"
@@ -62,7 +64,8 @@
             android:background="#0000"
             android:text="@string/tuesdayAbbreviation"
             android:textSize="5pt"
-            android:id="@+id/tuesday_button"/>
+            android:id="@+id/tuesday_button"
+            android:onClick="onClickDayOfTheWeek"/>
 
         <Button
             android:layout_width="25dp"
@@ -72,7 +75,8 @@
             android:background="#0000"
             android:text="@string/wednesdayAbbreviation"
             android:textSize="5pt"
-            android:id="@+id/wednesday_button"/>
+            android:id="@+id/wednesday_button"
+            android:onClick="onClickDayOfTheWeek"/>
 
         <Button
             android:layout_width="25dp"
@@ -82,7 +86,8 @@
             android:background="#0000"
             android:text="@string/thursdayAbbreviation"
             android:textSize="5pt"
-            android:id="@+id/thursday_button"/>
+            android:id="@+id/thursday_button"
+            android:onClick="onClickDayOfTheWeek"/>
 
         <Button
             android:layout_width="25dp"
@@ -92,7 +97,8 @@
             android:background="#0000"
             android:text="@string/fridayAbbreviation"
             android:textSize="5pt"
-            android:id="@+id/friday_button"/>
+            android:id="@+id/friday_button"
+            android:onClick="onClickDayOfTheWeek"/>
 
         <Button
             android:layout_width="25dp"
@@ -102,7 +108,8 @@
             android:background="#0000"
             android:text="@string/saturdayAbbreviation"
             android:textSize="5pt"
-            android:id="@+id/saturday_button"/>
+            android:id="@+id/saturday_button"
+            android:onClick="onClickDayOfTheWeek"/>
 
     </LinearLayout>
 
